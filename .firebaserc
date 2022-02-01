@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "my-first-project-c93af": {
+      "hosting": {
+        "angular-add-to-cart": [
+          "my-first-project-c93af"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "my-first-project-c93af"
+  }
+}

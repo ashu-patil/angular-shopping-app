@@ -98,6 +98,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "angular-add-to-cart:build:production",
+            "firebaseProject": "my-first-project-c93af",
+            "firebaseHostingSite": "my-first-project-c93af"
+          }
         }
       }
     }

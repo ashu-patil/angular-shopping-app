@@ -1,0 +1,14 @@
+.mainContainer{
+    display: flex;
+    justify-content: space-evenly;
+    /* flex-direction: row; */
+    align-items: flex-start;
+
+}
+
+.form-control{
+     width: 600px;
+}
+
+
+

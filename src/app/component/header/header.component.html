@@ -1,0 +1,20 @@
+
+<header>
+    <div class="navbar bg-warning shadow-sm mainContainer">
+        <div>        
+            <i style="font-size: 40px;" class="fas fa-shopping-basket"> </i>&nbsp;
+            
+            <strong style="font-size: 30px;"> Patil-Mart</strong>
+        </div>
+        
+        
+            <input type="text" placeholder="search products" [(ngModel)]="searchTerm" (keyup)="search($event)" class="form-control">
+   
+            
+          
+         <button routerLink="cart" class="btn btn-warning">
+             <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+             <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+         </button>
+    </div>
+</header>
