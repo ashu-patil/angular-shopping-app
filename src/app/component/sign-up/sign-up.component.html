@@ -17,9 +17,11 @@
                         <label class="form-label" for="form3Example1c">Your Name</label>
                         <input type="text" formControlName="name" id="form3Example1c" class="form-control" />
                       
-                        <mat-error *ngIf="name?.errors?.['required']">
-                            Name is required
-                        </mat-error>
+                        <div *ngIf="signUpForm.controls['name'].touched && !signUpForm.controls['name'].valid">
+                            <span class="red"  *ngIf="signUpForm.controls['name'].hasError('required')">
+                                First Name is Required!!
+                            </span>
+                        </div>
                     </div>
                   </div>
 
@@ -28,12 +30,14 @@
                     <div class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example3c">Your Email</label>
                         <input type="email" formControlName="email" id="form3Example3c" class="form-control" />
-                        <mat-error *ngIf="email?.errors?.['required']">
-                            Email is required
-                        </mat-error>
-                        <mat-error *ngIf="email?.errors?.['email']">
-                            Please enter a correct email formate
-                        </mat-error>
+                        <div *ngIf="signUpForm.controls['email'].touched && !signUpForm.controls['email'].valid">
+                        <span class="red" *ngIf="signUpForm.controls['email'].hasError('required')">
+                          Email is Required!!
+                        </span>
+                        <span class="red" *ngIf="signUpForm.controls['email'].hasError('email')">
+                          Please Enter valid Email
+                        </span>
+                      </div>
                     </div>
                   </div>
 
@@ -42,9 +46,11 @@
                     <div class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example4c">Password</label>
                         <input type="password" formControlName="password" id="form3Example4c" class="form-control" />
-                        <mat-error *ngIf="password?.errors?.['required']">
-                            Password is required
-                        </mat-error>
+                        <div *ngIf="signUpForm.controls['password'].touched && !signUpForm.controls['password'].valid">
+                          <span class="red" *ngIf="signUpForm.controls['password'].hasError('required')">
+                            Password is Required!!
+                          </span>
+                        </div>
                     </div>
                   </div>
 
@@ -53,9 +59,11 @@
                     <div class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example4cd">Confirm your password</label>
                         <input type="password" formControlName="confirmPassword" id="form3Example4cd" class="form-control" />
-                        <mat-error *ngIf="email?.errors?.['required']">
-                            Confirm Password is required
-                        </mat-error>
+                        <div *ngIf="signUpForm.controls['confirmPassword'].touched && !signUpForm.controls['confirmPassword'].valid">
+                          <span class="red" *ngIf="signUpForm.controls['confirmPassword'].hasError('required')">
+                            Confirm Password is Required!!
+                          </span>
+                        </div>
                     </div>
                   </div>
                   <div class="d-flex flex-row align-items-center mb-4">

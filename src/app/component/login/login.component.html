@@ -28,30 +28,38 @@
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example17">Email address</label>
                     <input  formControlName="email"  id="form2Example17" class="form-control form-control-lg" />
-                    <mat-error *ngIf="email?.errors?.['required']">
-                        Email is required
-                    </mat-error>
-                    <mat-error *ngIf="email?.errors?.['email']">
-                        Please enter a correct email format
-                    </mat-error>
+                     <div *ngIf="loginForm.controls['email'].touched && !loginForm.controls['email'].valid" class="red">
+                        <span *ngIf="loginForm.controls['email'].hasError('required')">
+                          Email is Required!!
+                        </span>
+                        <span *ngIf="loginForm.controls['email'].hasError('email')">
+                          Please Enter valid Email
+                        </span>
+                      </div>
                   </div>
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form2Example27">Password</label>
                     <input type="password" formControlName="password" id="form2Example27" class="form-control form-control-lg" />
-                    <mat-error *ngIf="password?.errors?.['required']">
-                        Password is required
-                    </mat-error>
+                    <div *ngIf="loginForm.controls['password'].touched && !loginForm.controls['password'].valid" class="red">
+                      <span *ngIf="loginForm.controls['password'].hasError('required')">
+                        Password is Required!!
+                      </span>
+                    </div>
                   </div>
 
                   <div class="pt-1 mb-4">
                     <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
                   </div>
 
-                  <a class="small text-muted" >Forgot password?</a>
-                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a routerLink="signup" style="color: #393f81;">Register here</a></p>
-                  <a  class="small text-muted">Terms of use.</a>
-                  <a  class="small text-muted">Privacy policy</a>
+                  <!-- <a class="small text-muted" >Forgot password?</a> -->
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">
+                    Don't have an account? 
+                    <a routerLink="signup" style="color: #393f81;">Register here</a>
+                  </p>
+                  
+                  <!-- <a  class="small text-muted">Terms of use.</a> -->
+                  <!-- <a  class="small text-muted">Privacy policy</a> -->
                 </form>
 
               </div>
