@@ -1,6 +1,7 @@
 import { CartService } from './../../service/cart.service';
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -18,11 +19,13 @@ export class CartComponent implements OnInit {
     });
   }
 
-  removeItem(item : any ){
+  removeItem(item: any) {
     this.cartService.removeCartItem(item);
   }
 
-  emptycart(){
+  emptycart() {
     this.cartService.removeAllCart();
   }
+
+
 }

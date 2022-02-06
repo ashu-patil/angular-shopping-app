@@ -1,5 +1,7 @@
 import { CartService } from './../../service/cart.service';
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/service/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +14,13 @@ export class HeaderComponent implements OnInit {
 
   public searchTerm: string = '';
 
-  constructor(private cartService : CartService) { }
+  user$ = this.authService.currentUser$;
+
+  constructor(
+    private cartService : CartService,
+    public authService: AuthenticationService,
+    private router: Router,
+    ) { }
 
   ngOnInit(): void {
 
@@ -27,4 +35,12 @@ export class HeaderComponent implements OnInit {
     this.cartService.search.next(this.searchTerm);
   }
 
+  logout(){
+    this.authService.logout().subscribe(()=>{
+      this.router.navigate(['']);
+    });
+  }
+
+ 
+  
 }
